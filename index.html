@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="R2RGen: Real-to-Real 3D Data Generation for Spatially Generalized Manipulation">
+    <meta name="author" content="Anonymous authors">
+
+    <title>REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+    <!-- PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
+    <style>
+        .pdf-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .pdf-canvas {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation</h2>
+<!--            <p class="abstract">An interpretable, data-efficient, and scalable neural scene representation.</p>-->
+    <hr>
+    <p>
+        Anonymous Authors
+        <br><br>
+        <a href="https://github.com/reamac-repo/remac-repo" target="_blank" style="color: #1E90FF;">
+            <img src="https://img.icons8.com/material-outlined/24/000000/github.png" alt="code" style="vertical-align: middle;">
+            &nbsp;Code (GitHub)
+        </a>
+    </p>
+
+</div>
+
+<div class="container">
+
+        <div class="vcontainer">
+            <video width="100%" controls>
+                <source src="remac_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    <div class="section">
+        <h2>Abstract</h2>
+        <hr>
+        <p>
+            Vision-language models (VLMs) have demonstrated remarkable capabilities in robotic planning, particularly for long-horizon tasks that require a holistic understanding of the environment for task decomposition. Existing methods typically rely on prior environmental knowledge or carefully designed task-specific prompts, making them struggle with dynamic scene changes or unexpected task conditions, e.g., a robot attempting to put a carrot in the microwave but finds the door was closed. Such challenges underscore two critical issues: adaptability and efficiency. To address them, in this work, we propose an adaptive multi-agent planning framework, termed REMAC, that enables efficient, scene-agnostic multi-robot long-horizon task planning and execution through continuous reflection and self-evolution. REMAC incorporates two key modules: a self-reflection module performing pre-condition and post-condition checks in the loop to evaluate progress and refine plans, and a self-evolvement module dynamically adapting plans based on scene-specific reasoning. It offers appealing benefits: 1) Robots can keep reflecting on potential planning errors and adapting the plan based on task-specific insights. 2) After iterations, a robot can call another one to coordinate tasks in parallel, maximizing the task execution efficiency. To validate REMAC's effectiveness, we build a multi-agent environment for long-horizon robot manipulation and navigation based on RoboCasa, featuring 4 task categories with 27 task styles and 50+ different objects. Based on it, we further benchmark state-of-the-art reasoning models, including DeepSeek-R1, o3, QwQ, Qwen3, and Grok3. Extensive experiments demonstrate REMAC's superiority by boosting average success rates by 40% and execution efficiency by 52.7% over the single robot baseline without any task-specific prompting or fine-tuning in initial planning.
+        </p>
+        <!-- add a image here-->
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <div class="pdf-container">
+                    <canvas id="pdf-canvas-1" class="pdf-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Approach</h2>
+        <hr>
+        <p>
+        	<b>Pre-processing results</b>. The 3D scene is parsed into complete objects, environment and robot’s arm. The trajectory is parsed into interleaved motion and skill segments.
+        </p>
+        <!-- add a image here-->
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <div class="pdf-container">
+                    <canvas id="pdf-canvas-2" class="pdf-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Visualization</h2>
+        <hr>
+        <p>
+            We visualize the REMAC multi-agent collaboration system for long-horizon robot manipulation tasks.
+        </p>
+        
+        <!-- Demo Video 2 -->
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <h4>REMAC Demo Video 2</h4>
+                <video width="80%" controls>
+                    <source src="remac_demo_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Experiments</h2>
+        <hr>
+        <p>
+            We evaluate our method on multiple benchmarks and compare with state-of-the-art approaches.
+        </p>
+        
+        <!-- Baseline Results -->
+        <div class="row align-items-center mb-4">
+            <div class="col justify-content-center text-center">
+                <h4>Baseline Comparison</h4>
+                <div class="pdf-container">
+                    <canvas id="pdf-canvas-3" class="pdf-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Combined Results -->
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <h4>Performance Analysis</h4>
+                <div class="pdf-container">
+                    <canvas id="pdf-canvas-4" class="pdf-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // PDF.js configuration
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.worker.min.js';
+
+        // PDF files to render
+        const pdfFiles = [
+            { url: 'pdf/graph_motivation.pdf', canvasId: 'pdf-canvas-1', scale: 1.5 },
+            { url: 'pdf/graph_twofig.pdf', canvasId: 'pdf-canvas-2', scale: 1.2 },
+            { url: 'pdf/baseline.pdf', canvasId: 'pdf-canvas-3', scale: 1.3 },
+            { url: 'pdf/combined_plots_vector.pdf', canvasId: 'pdf-canvas-4', scale: 1.3 }
+        ];
+
+        // Function to render PDF to canvas
+        function renderPDF(pdfUrl, canvasId, scale = 1.5) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+                // Get the first page
+                pdf.getPage(1).then(function(page) {
+                    const viewport = page.getViewport({ scale: scale });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+
+                    page.render(renderContext);
+                });
+            }).catch(function(error) {
+                console.error('Error loading PDF:', pdfUrl, error);
+                // Show error message on canvas
+                ctx.fillStyle = '#f8f9fa';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#6c757d';
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('PDF加载失败', canvas.width/2, canvas.height/2);
+            });
+        }
+
+        // Render all PDFs when page loads
+        window.addEventListener('load', function() {
+            pdfFiles.forEach(function(pdf) {
+                renderPDF(pdf.url, pdf.canvasId, pdf.scale);
+            });
+        });
+    </script>
+</body>
+</html>
