@@ -77,7 +77,8 @@
         <h2>Approach</h2>
         <hr>
         <p>
-        	<b>Left: Self-Reflection:</b> Before the execution of subtask i, the VLM verifies the pre-conditions to determine whether the plan for subtask i is executable given the observation after completing subtask i − 1. If not, this indicates an error in the initial planning, and the system engages in a reflection process to identify the cause of this error, which is subsequently stored in the reflection database. Following the execution of subtask i, the VLM verifies the post-conditions to assess whether the subtask was successfully executed, given the observation after executing the current task. If not, the system initiates a retry of the subtask.
+            <b>Left: Self-Reflection:</b> Before the execution of subtask $i$, the VLM verifies the pre-conditions to determine whether the plan for subtask $i$ is executable given the observation after completing subtask $i - 1$. If not, this indicates an error in the initial planning, and the system engages in a reflection process to identify the cause of this error, which is subsequently stored in the reflection database. Following the execution of subtask $i$, the VLM verifies the post-conditions to assess whether the subtask was successfully executed, given the observation after executing the current task. If not, the system initiates a retry of the subtask.
+            <br><br>
             <b>Right: Self-Evolvement:</b> Upon sequential completion of all subtasks, the reflection database—containing accumulated pre-condition-check analysis and last-iteration plan serves as the foundation for generating initial plans for subsequent iterations. This knowledge-augmented process iteratively refines planning logic, yielding an optimized initial plan with feasibility and efficiency for future iterations.
         </p>
         <div class="row align-items-center">
@@ -87,6 +88,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
