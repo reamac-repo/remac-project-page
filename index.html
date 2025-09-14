@@ -9,15 +9,10 @@
     <meta name="author" content="Anonymous authors">
 
     <title>REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation</title>
-    <!-- Bootstrap core CSS -->
-    <!--link href="bootstrap.min.css" rel="stylesheet"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
     <link href="offcanvas.css" rel="stylesheet">
-    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
-    <!-- PDF.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
     <style>
         .pdf-container {
@@ -37,14 +32,18 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
     <h2>REMAC: Self-Reflective and Self-Evolving Multi-Agent Collaboration for Long-Horizon Robot Manipulation</h2>
-<!--            <p class="abstract">An interpretable, data-efficient, and scalable neural scene representation.</p>-->
-    <hr>
+<hr>
     <p>
         Anonymous Authors
         <br><br>
         <a href="https://github.com/reamac-repo/remac-repo" target="_blank" style="color: #1E90FF;">
             <img src="https://img.icons8.com/material-outlined/24/000000/github.png" alt="code" style="vertical-align: middle;">
             &nbsp;Code (GitHub)
+        </a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="_AAAI2026_REMAC__Self_Reflective_and_Self_Evolving_Multi_Agent_Collaboration_for_Long_Horizon_Robot_Manipulation (4).pdf" target="_blank" style="color: #1E90FF;">
+            <img src="https://img.icons8.com/material-outlined/24/000000/file.png" alt="appendix" style="vertical-align: middle;">
+            &nbsp;appendix
         </a>
     </p>
 
@@ -65,7 +64,6 @@
         <p>
             Vision-language models (VLMs) have demonstrated remarkable capabilities in robotic planning, particularly for long-horizon tasks that require a holistic understanding of the environment for task decomposition. Existing methods typically rely on prior environmental knowledge or carefully designed task-specific prompts, making them struggle with dynamic scene changes or unexpected task conditions, e.g., a robot attempting to put a carrot in the microwave but finds the door was closed. Such challenges underscore two critical issues: adaptability and efficiency. To address them, in this work, we propose an adaptive multi-agent planning framework, termed REMAC, that enables efficient, scene-agnostic multi-robot long-horizon task planning and execution through continuous reflection and self-evolution. REMAC incorporates two key modules: a self-reflection module performing pre-condition and post-condition checks in the loop to evaluate progress and refine plans, and a self-evolvement module dynamically adapting plans based on scene-specific reasoning. It offers appealing benefits: 1) Robots can keep reflecting on potential planning errors and adapting the plan based on task-specific insights. 2) After iterations, a robot can call another one to coordinate tasks in parallel, maximizing the task execution efficiency. To validate REMAC's effectiveness, we build a multi-agent environment for long-horizon robot manipulation and navigation based on RoboCasa, featuring 4 task categories with 27 task styles and 50+ different objects. Based on it, we further benchmark state-of-the-art reasoning models, including DeepSeek-R1, o3, QwQ, Qwen3, and Grok3. Extensive experiments demonstrate REMAC's superiority by boosting average success rates by 40% and execution efficiency by 52.7% over the single robot baseline without any task-specific prompting or fine-tuning in initial planning.
         </p>
-        <!-- add a image here-->
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <div class="pdf-container">
@@ -81,7 +79,6 @@
         <p>
         	<b>Pre-processing results</b>. The 3D scene is parsed into complete objects, environment and robot’s arm. The trajectory is parsed into interleaved motion and skill segments.
         </p>
-        <!-- add a image here-->
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <div class="pdf-container">
@@ -99,7 +96,6 @@
             We visualize the REMAC multi-agent collaboration system for long-horizon robot manipulation tasks.
         </p>
         
-        <!-- Demo Video 2 -->
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <h4>REMAC Demo Video 2</h4>
@@ -118,7 +114,6 @@
             We evaluate our method on multiple benchmarks and compare with state-of-the-art approaches.
         </p>
         
-        <!-- Baseline Results -->
         <div class="row align-items-center mb-4">
             <div class="col justify-content-center text-center">
                 <h4>Baseline Comparison</h4>
@@ -128,7 +123,6 @@
             </div>
         </div>
         
-        <!-- Combined Results -->
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <h4>Performance Analysis</h4>
