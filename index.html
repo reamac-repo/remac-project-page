@@ -16,10 +16,6 @@
     <link href="offcanvas.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
     
-    <!-- ADDED: MathJax for rendering LaTeX math formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
     <style>
         .pdf-container {
             text-align: center;
@@ -83,7 +79,7 @@
         <h2>Approach</h2>
         <hr>
         <p>
-            <b>Left: Self-Reflection:</b> Before the execution of subtask $i$, the VLM verifies the pre-conditions to determine whether the plan for subtask $i$ is executable given the observation after completing subtask $i - 1$. If not, this indicates an error in the initial planning, and the system engages in a reflection process to identify the cause of this error, which is subsequently stored in the reflection database. Following the execution of subtask $i$, the VLM verifies the post-conditions to assess whether the subtask was successfully executed, given the observation after executing the current task. If not, the system initiates a retry of the subtask.
+            <b>Left: Self-Reflection:</b> Before the execution of subtask i, the VLM verifies the pre-conditions to determine whether the plan for subtask i is executable given the observation after completing subtask i - 1. If not, this indicates an error in the initial planning, and the system engages in a reflection process to identify the cause of this error, which is subsequently stored in the reflection database. Following the execution of subtask i, the VLM verifies the post-conditions to assess whether the subtask was successfully executed, given the observation after executing the current task. If not, the system initiates a retry of the subtask.
             <br><br>
             <b>Right: Self-Evolvement:</b> Upon sequential completion of all subtasks, the reflection database—containing accumulated pre-condition-check analysis and last-iteration plan serves as the foundation for generating initial plans for subsequent iterations. This knowledge-augmented process iteratively refines planning logic, yielding an optimized initial plan with feasibility and efficiency for future iterations.
         </p>
@@ -97,15 +93,15 @@
     </div>
 
     <div class="section">
-        <h2>Visualization</h2>
+        <h2>Real-World Demo</h2>
         <hr>
         <p>
-            We visualize the REMAC multi-agent collaboration system for long-horizon robot manipulation tasks.
+            We demonstrate the REMAC multi-agent collaboration system in real-world scenarios for long-horizon robot manipulation tasks.
         </p>
         
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
-                <h4>REMAC Demo Video 2</h4>
+                <h4>REMAC Demo Video</h4>
                 <video width="80%" controls>
                     <source src="remac_demo_2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -117,13 +113,16 @@
     <div class="section">
         <h2>Experiments</h2>
         <hr>
-        <p>
-            We evaluate our method on multiple benchmarks and compare with state-of-the-art approaches.
-        </p>
         
         <div class="row align-items-center mb-4">
             <div class="col justify-content-center text-center">
                 <h4>Baseline Comparison</h4>
+                <p style="text-align: left;">
+                    Comparism with baselines, where each data is the 
+                    average task success rate of 10 experiments on 4 tasks. We 
+                    use gpt-4o as the base LLM in REFLECT(+CC). Settings of 
+                    RE and REMAC are the same as previous. 
+                </p>
                 <div class="pdf-container">
                     <canvas id="pdf-canvas-3" class="pdf-canvas"></canvas>
                 </div>
@@ -133,6 +132,12 @@
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <h4>Performance Analysis</h4>
+                <p style="text-align: left;">
+                    Our experimental results indicate that: (1) condition checking and reflective evolution effectively enhance both the 
+                    Task Success Rate and the Subtask Completion Rate; (2) compared to single-robot systems, multi-robot systems demonstrate 
+                    a reduced Length of Initial Plan and greater efficiency. All tasks were subjected to rigorous validation through 10 randomized 
+                    initializations across four distinct experimental settings, and one dot represents a single experiment (may overlap).
+                </p>
                 <div class="pdf-container">
                     <canvas id="pdf-canvas-4" class="pdf-canvas"></canvas>
                 </div>
@@ -144,7 +149,6 @@
 </div>
 
 
-<!-- FIX: Corrected 'xintegrity' to 'integrity' on all script tags -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         xintegrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -172,7 +176,6 @@
             const canvas = document.getElementById(canvasId);
             const ctx = canvas.getContext('2d');
             
-            // FIX: Construct a full URL from the relative path to avoid errors in sandboxed environments.
             const absoluteUrl = new URL(pdfUrl, window.location.href).href;
 
             pdfjsLib.getDocument(absoluteUrl).promise.then(function(pdf) {
